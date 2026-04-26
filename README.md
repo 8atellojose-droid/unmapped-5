@@ -1,4 +1,4 @@
-# 🌍 UNMAPPED
+# UNMAPPED
 
 ### Portable Skills Infrastructure for Invisible Talent
 
