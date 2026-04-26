@@ -1,0 +1,494 @@
+{
+  "Ghana": {
+    "education_taxonomy": {
+      "JHS": {
+        "portable_level": "Lower Secondary",
+        "completion": true
+      },
+      "JHS dropout": {
+        "portable_level": "Lower Secondary",
+        "completion": false
+      },
+      "SHS": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "Secondary school certificate": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "SHS graduate": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "NVTI": {
+        "portable_level": "Vocational Cert",
+        "completion": true
+      },
+      "Polytechnic HND": {
+        "portable_level": "Diploma (HND)",
+        "completion": true
+      },
+      "Polytechnic HND incomplete": {
+        "portable_level": "Diploma (HND)",
+        "completion": false
+      },
+      "Diploma": {
+        "portable_level": "Diploma",
+        "completion": true
+      },
+      "Bachelor": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      },
+      "College": {
+        "portable_level": "Tertiary / College",
+        "completion": false
+      },
+      "University incomplete": {
+        "portable_level": "Bachelor's",
+        "completion": false
+      },
+      "Vocational certificate": {
+        "portable_level": "Vocational Cert",
+        "completion": true
+      }
+    },
+    "language_terms": [
+      "Twi",
+      "Ga",
+      "Ewe",
+      "Fante",
+      "Dagbani",
+      "Akan"
+    ],
+    "local_skill_terms": {
+      "momo": "Mobile Money",
+      "mtn momo": "Mobile Money",
+      "vodafone cash": "Mobile Money",
+      "nvti": "Vocational Certification",
+      "trotro": "Local Transport Ops",
+      "cashier": "POS / Payments",
+      "whatsapp orders": "Digital Communication",
+      "facebook page": "Digital Marketing",
+      "customer care": "Customer Service"
+    },
+    "opportunity_types": [
+      "Self-employment (microenterprise)",
+      "Mobile money agent",
+      "Device repair",
+      "Junior web/digital support (remote)",
+      "Operations/clerical (urban)",
+      "Training pathway: Excel / bookkeeping / digital basics"
+    ],
+    "economic_signal_source": "ILOSTAT (West Africa) + WDI (Ghana) + ITU + Frey-Osborne + ISCO-08",
+    "automation_calibration": 1.0,
+    "currency_symbol": "GHS (proxy USD shown)",
+    "broadband_constraint": "Mobile-first, fixed broadband uneven outside urban hubs",
+    "local_terminology_labels": {
+      "Mobile Money": "MoMo (MTN MoMo / Vodafone Cash)",
+      "Vocational Cert": "NVTI Certificate",
+      "Microenterprise": "Trader / Stall (susu, fabric, market)",
+      "Customer Service": "Client Service",
+      "Tertiary": "University / Polytechnic"
+    }
+  },
+  "Nigeria": {
+    "education_taxonomy": {
+      "WAEC SSCE": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "WAEC": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "SSCE": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "OND": {
+        "portable_level": "Diploma (OND)",
+        "completion": true
+      },
+      "OND incomplete": {
+        "portable_level": "Diploma (OND)",
+        "completion": false
+      },
+      "HND": {
+        "portable_level": "Diploma (HND)",
+        "completion": true
+      },
+      "NCE": {
+        "portable_level": "Teaching Cert (NCE)",
+        "completion": true
+      },
+      "B.Sc": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      },
+      "Bachelor": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      },
+      "Quranic + secondary": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "College": {
+        "portable_level": "Tertiary / College",
+        "completion": false
+      },
+      "University incomplete": {
+        "portable_level": "Bachelor's",
+        "completion": false
+      },
+      "Vocational certificate": {
+        "portable_level": "Vocational / Technical",
+        "completion": true
+      }
+    },
+    "language_terms": [
+      "Yoruba",
+      "Igbo",
+      "Hausa",
+      "Pidgin",
+      "Arabic"
+    ],
+    "local_skill_terms": {
+      "opay": "Mobile Money",
+      "paga": "Mobile Money",
+      "moniepoint": "Mobile Money",
+      "interswitch": "Payments Systems",
+      "paystack": "Payments Systems",
+      "flutterwave": "Payments Systems",
+      "kobotoolbox": "Survey/M&E Tools",
+      "customer care": "Customer Service",
+      "whatsapp orders": "Digital Communication",
+      "github": "Web Tools",
+      "landing page": "Basic Web/HTML"
+    },
+    "opportunity_types": [
+      "POS/agent banking",
+      "Self-employment (microenterprise)",
+      "BPO / customer support",
+      "Junior web/digital support (remote)",
+      "NGO M&E / data entry",
+      "Training pathway: SQL / Excel / digital marketing"
+    ],
+    "economic_signal_source": "ILOSTAT + WDI (Nigeria) + CBN (agent banking) + ITU + Frey-Osborne",
+    "automation_calibration": 1.0,
+    "currency_symbol": "NGN (proxy USD shown)",
+    "broadband_constraint": "Power and broadband instability are structural constraints",
+    "local_terminology_labels": {
+      "Mobile Money": "Opay / Moniepoint / Paga",
+      "Vocational Cert": "NABTEB / Trade Test",
+      "Microenterprise": "Hustle / Small business",
+      "Customer Service": "Customer Care",
+      "Tertiary": "University / Polytechnic / NCE"
+    }
+  },
+  "Philippines": {
+    "education_taxonomy": {
+      "Senior High": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "Senior High graduate": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "SHS": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "TESDA NC II": {
+        "portable_level": "Vocational Cert",
+        "completion": true
+      },
+      "B.S.": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      },
+      "B.S. incomplete": {
+        "portable_level": "Bachelor's",
+        "completion": false
+      },
+      "College Graduate": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      },
+      "Bachelor": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      },
+      "College": {
+        "portable_level": "Tertiary / College",
+        "completion": false
+      },
+      "College level": {
+        "portable_level": "Tertiary / College",
+        "completion": false
+      },
+      "University incomplete": {
+        "portable_level": "Bachelor's",
+        "completion": false
+      }
+    },
+    "language_terms": [
+      "Tagalog",
+      "Cebuano",
+      "Hiligaynon",
+      "Bisaya",
+      "Kapampangan",
+      "Ilocano",
+      "Taglish"
+    ],
+    "local_skill_terms": {
+      "shopee": "E-commerce Platform",
+      "lazada": "E-commerce Platform",
+      "grabpay": "Mobile Money",
+      "gcash": "Mobile Money",
+      "maya": "Mobile Money",
+      "tesda": "Vocational Certification",
+      "sari-sari": "Microenterprise",
+      "onlinejobs.ph": "Web Tools",
+      "barangay records": "Process Documentation",
+      "call center course": "Spoken English",
+      "amadeus": "Customer Service"
+    },
+    "opportunity_types": [
+      "BPO / customer support",
+      "Virtual assistant / digital support",
+      "E-commerce ops (Shopee/Lazada)",
+      "Junior web/no-code support (remote)",
+      "Shared services / clerical",
+      "Training pathway: SQL / accounting / English-comms upgrade"
+    ],
+    "economic_signal_source": "ILOSTAT + PSA Labor Force Survey + ITU + Frey-Osborne + TESDA",
+    "automation_calibration": 1.05,
+    "currency_symbol": "PHP (proxy USD shown)",
+    "broadband_constraint": "Strong baseline broadband; uneven outside metro areas",
+    "local_terminology_labels": {
+      "Mobile Money": "GCash / Maya / GrabPay",
+      "Vocational Cert": "TESDA NC II",
+      "Microenterprise": "Sari-sari / Online seller",
+      "Customer Service": "Customer Care / Voice Account",
+      "Tertiary": "College / University"
+    }
+  },
+  "Colombia": {
+    "education_taxonomy": {
+      "Bachillerato completo": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "Bachillerato incompleto": {
+        "portable_level": "Upper Secondary",
+        "completion": false
+      },
+      "Tecnico laboral": {
+        "portable_level": "Vocational Cert",
+        "completion": true
+      },
+      "SENA": {
+        "portable_level": "Vocational Cert",
+        "completion": true
+      },
+      "Tecnologo incompleto": {
+        "portable_level": "Diploma",
+        "completion": false
+      },
+      "Universidad incompleta": {
+        "portable_level": "Bachelor's",
+        "completion": false
+      },
+      "College": {
+        "portable_level": "Tertiary / College",
+        "completion": false
+      },
+      "Universidad completa": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      },
+      "Tecnologo completo": {
+        "portable_level": "Vocational / Technical",
+        "completion": true
+      }
+    },
+    "language_terms": [
+      "Spanish",
+      "Paisa",
+      "Spanglish"
+    ],
+    "local_skill_terms": {
+      "nequi": "Mobile Money",
+      "daviplata": "Mobile Money",
+      "mercado libre": "E-commerce Platform",
+      "cambia pantallas": "Repair Diagnostics",
+      "pantallas dañadas": "Repair Diagnostics",
+      "arregla celulares": "Repair Diagnostics",
+      "pedidos por whatsapp": "Digital Communication",
+      "seguimiento de pedidos": "Customer Relationship Management",
+      "manejo de instagram": "Digital Marketing",
+      "preguntas de mercado libre": "Customer Service",
+      "sena curso": "Vocational Certification"
+    },
+    "opportunity_types": [
+      "Self-employment (microenterprise)",
+      "Device repair",
+      "E-commerce ops",
+      "Customer support / digital sales",
+      "Training pathway: English / Excel / digital tools"
+    ],
+    "economic_signal_source": "World Bank WDI + ILOSTAT + ITU + Frey-Osborne + SENA",
+    "automation_calibration": 1.0,
+    "currency_symbol": "COP (proxy USD shown)",
+    "broadband_constraint": "Urban mobile internet stronger than peri-urban and rural fixed connectivity",
+    "local_terminology_labels": {
+      "Mobile Money": "Nequi / Daviplata",
+      "Vocational Cert": "SENA / Tecnico",
+      "Microenterprise": "Emprendimiento / Puesto",
+      "Customer Service": "Atencion al cliente",
+      "Tertiary": "Universidad / Tecnologo"
+    }
+  },
+  "Peru": {
+    "education_taxonomy": {
+      "Secundaria completa": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "Secundaria incompleta": {
+        "portable_level": "Upper Secondary",
+        "completion": false
+      },
+      "Tecnico incompleto": {
+        "portable_level": "Vocational Cert",
+        "completion": false
+      },
+      "Instituto tecnico": {
+        "portable_level": "Vocational Cert",
+        "completion": true
+      },
+      "Universidad incompleta": {
+        "portable_level": "Bachelor's",
+        "completion": false
+      },
+      "College": {
+        "portable_level": "Tertiary / College",
+        "completion": false
+      },
+      "Universidad completa": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      },
+      "Instituto completo": {
+        "portable_level": "Vocational / Technical",
+        "completion": true
+      }
+    },
+    "language_terms": [
+      "Spanish",
+      "Quechua",
+      "Spanglish"
+    ],
+    "local_skill_terms": {
+      "yape": "Mobile Money",
+      "plin": "Mobile Money",
+      "arregla celulares": "Repair Diagnostics",
+      "puerto de carga": "Hardware Troubleshooting",
+      "cambio de pantalla": "Repair Diagnostics",
+      "seguimiento de pedidos": "Customer Relationship Management",
+      "bodega": "Microenterprise",
+      "reservas por whatsapp": "Customer Relationship Management",
+      "caja": "POS / Payments",
+      "seguimiento de clientes": "Customer Relationship Management",
+      "youtube tutoriales": "Self-Taught Coding"
+    },
+    "opportunity_types": [
+      "Self-employment (microenterprise)",
+      "Device repair",
+      "Shared services / clerical",
+      "E-commerce ops",
+      "Training pathway: Excel / support / bookkeeping"
+    ],
+    "economic_signal_source": "World Bank WDI + ILOSTAT + ITU + Frey-Osborne + UNESCO UIS",
+    "automation_calibration": 1.0,
+    "currency_symbol": "PEN (proxy USD shown)",
+    "broadband_constraint": "Strong mobile usage with urban-rural quality gaps",
+    "local_terminology_labels": {
+      "Mobile Money": "Yape / Plin",
+      "Vocational Cert": "Instituto tecnico",
+      "Microenterprise": "Bodega / Emprendimiento",
+      "Customer Service": "Atencion al cliente",
+      "Tertiary": "Instituto / Universidad"
+    }
+  },
+  "Guatemala": {
+    "education_taxonomy": {
+      "Diversificado completo": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "Diversificado incomplete": {
+        "portable_level": "Upper Secondary",
+        "completion": false
+      },
+      "Bachillerato completo": {
+        "portable_level": "Upper Secondary",
+        "completion": true
+      },
+      "Tecnico incompleto": {
+        "portable_level": "Vocational Cert",
+        "completion": false
+      },
+      "Universidad incompleta": {
+        "portable_level": "Bachelor's",
+        "completion": false
+      },
+      "College": {
+        "portable_level": "Tertiary / College",
+        "completion": false
+      },
+      "Universidad completa": {
+        "portable_level": "Bachelor's",
+        "completion": true
+      }
+    },
+    "language_terms": [
+      "Spanish",
+      "Kiche",
+      "Spanglish"
+    ],
+    "local_skill_terms": {
+      "seguimiento de reservas": "Customer Service",
+      "chat de clientes": "Customer Service",
+      "manejo de pagina de facebook": "Digital Communication",
+      "curso de call center": "Spoken English",
+      "back office": "Process Documentation",
+      "cyber cafe": "Digital Communication",
+      "impresiones": "Process Documentation",
+      "tramites en linea": "Digital Communication",
+      "curso de ingles para call center": "Spoken English"
+    },
+    "opportunity_types": [
+      "BPO / customer support",
+      "Admin support",
+      "Self-employment (microenterprise)",
+      "Digital support",
+      "Training pathway: English / typing / Excel"
+    ],
+    "economic_signal_source": "World Bank WDI + ILOSTAT + ITU + Frey-Osborne + UNESCO UIS",
+    "automation_calibration": 1.0,
+    "currency_symbol": "GTQ (proxy USD shown)",
+    "broadband_constraint": "Mobile connectivity widespread but unstable in lower-income households",
+    "local_terminology_labels": {
+      "Mobile Money": "Tigo Money / billeteras",
+      "Vocational Cert": "Tecnico",
+      "Microenterprise": "Negocio propio",
+      "Customer Service": "Servicio al cliente",
+      "Tertiary": "Universidad"
+    }
+  }
+}

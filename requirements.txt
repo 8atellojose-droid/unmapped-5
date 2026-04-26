@@ -1,0 +1,6 @@
+pandas>=2.0
+requests>=2.31
+sentence-transformers>=5.4
+streamlit>=1.30
+graphviz>=0.19
+altair>=5.0

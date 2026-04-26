@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>UNMAPPED — System Architecture</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root {
+      --bg: #FAFAF7; --ink: #1A1A1A; --teal: #0F766E; --teal-deep: #134E4A;
+      --muted: #475569; --pill-bg: rgba(15,118,110,0.08);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 32px 28px 56px; }
+    .hero {
+      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 100%);
+      color: #FAFAF7; border-radius: 14px; padding: 28px 32px; margin-bottom: 24px;
+    }
+    .hero h1 { margin: 0 0 6px 0; font-size: 2.3rem; letter-spacing: -0.01em; }
+    .hero p  { margin: 0 0 14px 0; opacity: 0.92; max-width: 760px; line-height: 1.45; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { background: rgba(255,255,255,0.14); color: #FAFAF7; padding: 4px 12px;
+      border-radius: 999px; font-size: 0.78rem; border: 1px solid rgba(255,255,255,0.22); }
+    h2 { color: var(--teal); margin: 28px 0 6px 0; font-size: 1.3rem; }
+    .caption { color: var(--muted); font-size: 0.92rem; margin: 0 0 16px 0; }
+    .legend { display: grid; grid-template-columns: 200px 1fr; gap: 8px 18px; margin: 18px 0 0 0; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 10px;
+      font-size: 0.78rem; font-weight: 600; text-align: center; border: 1px solid; }
+    .b-real     { color: #1B5E20; background: #E8F5E9; border-color: #1B5E2033; }
+    .b-official { color: #0D47A1; background: #E3F2FD; border-color: #0D47A133; }
+    .b-fallback { color: #E65100; background: #FFF3E0; border-color: #E6510033; }
+    .b-bench    { color: #283593; background: #E8EAF6; border-color: #28358333; }
+    .b-proxy    { color: #B71C1C; background: #FFEBEE; border-color: #B71C1C33; }
+    .legend-text { color: var(--ink); font-size: 0.92rem; padding-top: 4px; }
+    .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 14px 0; }
+    .step { background: #FFFFFF; border: 1px solid #E2E8E6; border-radius: 10px; padding: 14px; min-height: 140px; }
+    .step .num { font-weight: 700; color: #0F172A; font-size: 0.95rem; margin-bottom: 6px; }
+    .step .body { font-size: 0.85rem; color: #1E293B; line-height: 1.4; }
+    .diagram { background: #FFFFFF; border: 1px solid #E2E8E6; border-radius: 12px;
+      padding: 16px; overflow-x: auto; }
+    .diagram svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+    .footer { color: var(--muted); font-size: 0.82rem; margin-top: 28px; text-align: center; }
+    .footer a { color: var(--teal); text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>🌍 UNMAPPED — System Architecture</h1>
+    <p>Portable skills infrastructure that turns informal experience into opportunity-ready,
+       AI-aware, country-grounded profiles. Every box below is a real file in the repo.</p>
+    <div class="pills">
+      <span class="pill">6 demo countries</span>
+      <span class="pill">Live World Bank API</span>
+      <span class="pill">Live ILOSTAT API</span>
+      <span class="pill">Frey-Osborne benchmark</span>
+      <span class="pill">7 UI languages · 176 keys</span>
+    </div>
+  </div>
+
+  <h2>Component Diagram</h2>
+  <p class="caption">Solid arrows = data flow at request time · dashed arrows = config loaded once at startup ·
+     dotted arrows = published benchmark · yellow nodes = country-agnostic config you can swap without code changes.</p>
+  <div class="diagram"><div id="graph">Loading diagram…</div></div>
+
+  <h2>Provenance Tier System</h2>
+  <p class="caption">Every metric on a recommendation card is tagged with one of these tiers, so the source of each value is visible at a glance — direct API, official fallback, published benchmark, or modeled proxy.</p>
+  <div class="legend">
+    <div><span class="badge b-real">REAL · World Bank API</span></div>
+    <div class="legend-text">Live World Bank API pull (NEET / Internet / Literacy)</div>
+    <div><span class="badge b-official">OFFICIAL · ILOSTAT (USD)</span></div>
+    <div class="legend-text">Direct ILOSTAT major-group earnings in U.S. dollars</div>
+    <div><span class="badge b-fallback">OFFICIAL FALLBACK</span></div>
+    <div class="legend-text">Official ILOSTAT pull but no direct USD series — uses PPP$ or skill-level fallback</div>
+    <div><span class="badge b-bench">BENCHMARK · Frey-Osborne</span></div>
+    <div class="legend-text">Published academic benchmark (Frey &amp; Osborne 2017 automation probability)</div>
+    <div><span class="badge b-proxy">LEGACY PROXY</span></div>
+    <div class="legend-text">Modeled planning estimate, kept only as a fallback when no API series matches</div>
+  </div>
+
+  <h2>End-to-End Data Flow</h2>
+  <div class="flow">
+    <div class="step" style="background:#A7F3D0;"><div class="num">1 · Raw input</div><div class="body">raw_youth_profiles.csv or live custom-profile form (Tab 1).</div></div>
+    <div class="step" style="background:#CCFBF1;"><div class="num">2 · Normalize</div><div class="body">extract_normalized_skills + ISCO-08 role mapping + semantic assist.</div></div>
+    <div class="step" style="background:#FEF3C7;"><div class="num">3 · Score</div><div class="body">Constraint-weighted confidence (data-driven rules in constraint_weights.csv).</div></div>
+    <div class="step" style="background:#E0E7FF;"><div class="num">4 · Recommend</div><div class="body">recommend_opportunities joins econ signals + AI Readiness + catalog pathways.</div></div>
+    <div class="step" style="background:#FCE7F3;"><div class="num">5 · Render</div><div class="body">Per-card REAL/PROXY/BENCHMARK badges + t()-localized copy across 7 languages.</div></div>
+  </div>
+
+  <div class="footer">
+    UNMAPPED · Portable Skills Infrastructure · 5th Hack-Nation Global AI Hackathon (Apr 25-26, 2026) ·
+    Source: <a href="architecture.dot">architecture.dot</a> ·
+    <a href="https://api.worldbank.org/v2" target="_blank">World Bank API</a> ·
+    <a href="https://ilostat.ilo.org/" target="_blank">ILOSTAT API</a>
+  </div>
+</div>
+
+<!-- d3-graphviz renders DOT in the browser. No build step needed. -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/@hpcc-js/wasm@2.18.0/dist/graphviz.umd.js"></script>
+<script src="https://unpkg.com/d3-graphviz@5.6.0/build/d3-graphviz.js"></script>
+<script>
+const dot = `
+digraph UNMAPPED {
+  rankdir=TB;
+  bgcolor="#FFFFFF";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, color="#0F766E"];
+  edge [color="#475569", arrowsize=0.7, fontname="Helvetica", fontsize=9];
+
+  subgraph cluster_sources {
+    label="EXTERNAL DATA SOURCES (REAL APIS + BENCHMARKS)";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    wb     [label="World Bank API\\nNEET · Internet · Literacy\\nInformal · GDP/cap", fillcolor="#DCFCE7"];
+    ilo    [label="ILOSTAT API\\nMin Wage · Occupation Earnings", fillcolor="#DCFCE7"];
+    frey   [label="Frey-Osborne (2017)\\nAutomation Exposure", fillcolor="#E0E7FF"];
+    witt   [label="Wittgenstein Centre\\n2025-2035 Projections", fillcolor="#E0E7FF"];
+    isco   [label="ISCO-08 / ESCO / O*NET\\nSkill & Role Taxonomy", fillcolor="#E0E7FF"];
+  }
+
+  subgraph cluster_ingest {
+    label="LIVE INGESTION SCRIPTS";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    wb_pull  [label="scripts/refresh_world_bank_indicators.py", fillcolor="#FFFFFF"];
+    ilo_pull [label="scripts/refresh_ilostat_wages.py", fillcolor="#FFFFFF"];
+  }
+
+  subgraph cluster_storage {
+    label="DATA STORAGE";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    econ      [label="data/economic_signals.csv", fillcolor="#FFFFFF"];
+    ai_csv    [label="data/ai_readiness.csv", fillcolor="#FFFFFF"];
+    edu_csv   [label="data/education_projection_signals.csv", fillcolor="#FFFFFF"];
+    opps_csv  [label="data/opportunity_catalog.csv", fillcolor="#FFFFFF"];
+    youth     [label="data/raw_youth_profiles.csv", fillcolor="#FFFFFF"];
+    constr    [label="data/constraint_weights.csv", fillcolor="#FFFFFF"];
+  }
+
+  subgraph cluster_cfg {
+    label="COUNTRY & RUNTIME CONFIGURATION (no code changes to swap)";
+    style="rounded,dashed"; color="#B45309"; fontname="Helvetica"; fontsize=10; fontcolor="#B45309";
+    cfg_country  [label="data/country_configs.json", fillcolor="#FEF3C7"];
+    cfg_runtime  [label="data/country_runtime_config.json", fillcolor="#FEF3C7"];
+    cfg_ui       [label="data/ui_terms.json\\n(176 keys × 7 languages)", fillcolor="#FEF3C7"];
+  }
+
+  subgraph cluster_pipe {
+    label="NORMALIZATION PIPELINE";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    tax    [label="src/taxonomy.py\\n(global role + skill taxonomy)", fillcolor="#FFFFFF"];
+    cfg    [label="src/config.py\\n(loads country configs at import time)", fillcolor="#FFFFFF"];
+    sem    [label="src/semantic_matching.py\\n(Hugging Face MiniLM, optional)", fillcolor="#FFFFFF"];
+    norm   [label="src/normalize_pipeline.py\\n(extract → match → score → recommend)", fillcolor="#CCFBF1"];
+  }
+
+  subgraph cluster_modules {
+    label="BRIEF MODULES";
+    style="rounded,dashed"; color="#0F766E"; fontname="Helvetica"; fontsize=10; fontcolor="#0F766E";
+    m1 [label="Module 1\\nSkills Signal Engine", fillcolor="#A7F3D0"];
+    m2 [label="Module 2\\nAI Readiness & Displacement Lens", fillcolor="#A7F3D0"];
+    m3 [label="Module 3\\nOpportunity Matching & Econometric Dashboard", fillcolor="#A7F3D0"];
+  }
+
+  subgraph cluster_ui {
+    label="PRESENTATION LAYER (Streamlit, 6 tabs)";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    app  [label="app.py\\n(hero · badges · fallback banner · t() helper)", fillcolor="#0F766E", fontcolor="#FAFAF7"];
+  }
+
+  wb   -> wb_pull;
+  ilo  -> ilo_pull;
+  wb_pull  -> econ;
+  ilo_pull -> econ;
+  frey -> econ [style=dotted, label="benchmark"];
+  witt -> edu_csv [style=dotted, label="benchmark"];
+  isco -> tax [style=dotted, label="taxonomy"];
+
+  youth   -> norm;
+  econ    -> norm;
+  ai_csv  -> norm;
+  edu_csv -> norm;
+  opps_csv -> norm;
+  constr  -> norm;
+  tax     -> norm;
+  sem     -> norm;
+  cfg     -> norm;
+
+  cfg_country -> cfg [style=dashed, label="loaded once"];
+  cfg_runtime -> app [style=dashed, label="role aliases"];
+  cfg_ui      -> app [style=dashed, label="t(key)"];
+
+  norm -> m1;
+  norm -> m2;
+  norm -> m3;
+  m1   -> app;
+  m2   -> app;
+  m3   -> app;
+}
+`;
+
+d3.select("#graph").graphviz()
+  .fit(true)
+  .zoom(false)
+  .renderDot(dot);
+</script>
+</body>
+</html>

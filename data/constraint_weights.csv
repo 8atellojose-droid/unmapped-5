@@ -1,0 +1,19 @@
+constraint_keyword,penalty_score,category,description
+no formal credential,4,Credentialing,Lacks recognized formal credential
+no degree,4,Credentialing,No tertiary degree
+incomplete,3,Credentialing,Incomplete credential or degree
+limited broadband,3,Connectivity,Limited fixed broadband access
+intermittent,3,Connectivity,Intermittent connectivity (data or power)
+broadband,2,Connectivity,Broadband-related friction noted
+wifi,2,Connectivity,Wifi-dependence noted
+shared mobile,3,Device Access,Shares mobile device with household
+no laptop,3,Device Access,No personal laptop
+no tools,3,Device Access,No work tools available
+limited tools,3,Device Access,Limited tools at home
+limited english,4,Language,Limited English fluency
+low literacy,4,Literacy,Low long-form English literacy
+intermittent power,2,Infrastructure,Intermittent electrical power
+gendered,3,Social,Gendered mobility or job perception constraint
+family obligations,2,Time,Family obligations limit available hours
+rural,2,Geographic,Rural / non-metro context
+short-term,2,Tenure,Short-term contract or work pattern

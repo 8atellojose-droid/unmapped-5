@@ -1,0 +1,106 @@
+// UNMAPPED — System Architecture
+// Source of truth for the architecture diagram rendered in app.py (Architecture tab).
+// Render with:  dot -Tsvg architecture.dot -o architecture.svg
+// Or open assets/architecture.html in a browser for a no-dependency render.
+digraph UNMAPPED {
+  rankdir=TB;
+  bgcolor="#FAFAF7";
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, color="#0F766E"];
+  edge [color="#475569", arrowsize=0.7, fontname="Helvetica", fontsize=9];
+
+  // === EXTERNAL DATA SOURCES ===
+  subgraph cluster_sources {
+    label="EXTERNAL DATA SOURCES (REAL APIS + BENCHMARKS)";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    wb     [label="World Bank API\nNEET · Internet · Literacy\nInformal · GDP/cap", fillcolor="#DCFCE7"];
+    ilo    [label="ILOSTAT API\nMin Wage · Occupation Earnings", fillcolor="#DCFCE7"];
+    frey   [label="Frey-Osborne (2017)\nAutomation Exposure", fillcolor="#E0E7FF"];
+    witt   [label="Wittgenstein Centre\n2025-2035 Projections", fillcolor="#E0E7FF"];
+    isco   [label="ISCO-08 / ESCO / O*NET\nSkill & Role Taxonomy", fillcolor="#E0E7FF"];
+  }
+
+  // === INGESTION ===
+  subgraph cluster_ingest {
+    label="LIVE INGESTION SCRIPTS";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    wb_pull  [label="scripts/refresh_world_bank_indicators.py", fillcolor="#FFFFFF"];
+    ilo_pull [label="scripts/refresh_ilostat_wages.py", fillcolor="#FFFFFF"];
+  }
+
+  // === STORAGE (CSV/JSON) ===
+  subgraph cluster_storage {
+    label="DATA STORAGE";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    econ      [label="data/economic_signals.csv", fillcolor="#FFFFFF"];
+    ai_csv    [label="data/ai_readiness.csv", fillcolor="#FFFFFF"];
+    edu_csv   [label="data/education_projection_signals.csv", fillcolor="#FFFFFF"];
+    opps_csv  [label="data/opportunity_catalog.csv", fillcolor="#FFFFFF"];
+    youth     [label="data/raw_youth_profiles.csv", fillcolor="#FFFFFF"];
+    constr    [label="data/constraint_weights.csv", fillcolor="#FFFFFF"];
+  }
+
+  // === CONFIG (yellow = country-agnostic switches) ===
+  subgraph cluster_cfg {
+    label="COUNTRY & RUNTIME CONFIGURATION (no code changes to swap)";
+    style="rounded,dashed"; color="#B45309"; fontname="Helvetica"; fontsize=10; fontcolor="#B45309";
+    cfg_country  [label="data/country_configs.json", fillcolor="#FEF3C7"];
+    cfg_runtime  [label="data/country_runtime_config.json", fillcolor="#FEF3C7"];
+    cfg_ui       [label="data/ui_terms.json\n(176 keys × 7 languages)", fillcolor="#FEF3C7"];
+  }
+
+  // === PIPELINE ===
+  subgraph cluster_pipe {
+    label="NORMALIZATION PIPELINE";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    tax    [label="src/taxonomy.py\n(global role + skill taxonomy)", fillcolor="#FFFFFF"];
+    cfg    [label="src/config.py\n(loads country configs at import time)", fillcolor="#FFFFFF"];
+    sem    [label="src/semantic_matching.py\n(Hugging Face MiniLM, optional)", fillcolor="#FFFFFF"];
+    norm   [label="src/normalize_pipeline.py\n(extract → match → score → recommend)", fillcolor="#CCFBF1"];
+  }
+
+  // === MODULES ===
+  subgraph cluster_modules {
+    label="BRIEF MODULES";
+    style="rounded,dashed"; color="#0F766E"; fontname="Helvetica"; fontsize=10; fontcolor="#0F766E";
+    m1 [label="Module 1\nSkills Signal Engine", fillcolor="#A7F3D0"];
+    m2 [label="Module 2\nAI Readiness & Displacement Lens", fillcolor="#A7F3D0"];
+    m3 [label="Module 3\nOpportunity Matching & Econometric Dashboard", fillcolor="#A7F3D0"];
+  }
+
+  // === PRESENTATION ===
+  subgraph cluster_ui {
+    label="PRESENTATION LAYER (Streamlit, 6 tabs)";
+    style="rounded,dashed"; color="#475569"; fontname="Helvetica"; fontsize=10; fontcolor="#475569";
+    app  [label="app.py\n(hero · badges · fallback banner · t() helper)", fillcolor="#0F766E", fontcolor="#FAFAF7"];
+  }
+
+  // === EDGES ===
+  wb   -> wb_pull;
+  ilo  -> ilo_pull;
+  wb_pull  -> econ;
+  ilo_pull -> econ;
+  frey -> econ [style=dotted, label="benchmark"];
+  witt -> edu_csv [style=dotted, label="benchmark"];
+  isco -> tax [style=dotted, label="taxonomy"];
+
+  youth   -> norm;
+  econ    -> norm;
+  ai_csv  -> norm;
+  edu_csv -> norm;
+  opps_csv -> norm;
+  constr  -> norm;
+  tax     -> norm;
+  sem     -> norm;
+  cfg     -> norm;
+
+  cfg_country -> cfg [style=dashed, label="loaded once"];
+  cfg_runtime -> app [style=dashed, label="role aliases"];
+  cfg_ui      -> app [style=dashed, label="t(key)"];
+
+  norm -> m1;
+  norm -> m2;
+  norm -> m3;
+  m1   -> app;
+  m2   -> app;
+  m3   -> app;
+}

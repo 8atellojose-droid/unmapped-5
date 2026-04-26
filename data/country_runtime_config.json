@@ -1,0 +1,114 @@
+{
+  "Ghana": {
+    "language": "English + Twi",
+    "currency_symbol": "GHS",
+    "role_alias_map": {
+      "Microenterprise Operator": "Microenterprise Operator",
+      "Device Repair Technician": "Device Repair Technician",
+      "Digital Support Assistant": "Digital Support Assistant"
+    },
+    "econometric_priority_signals": [
+      "youth_neet_rate_pct",
+      "internet_penetration_pct",
+      "youth_literacy_rate_pct",
+      "wage_floor_proxy_usd_month"
+    ],
+    "opportunity_types_enabled": [
+      "employment (small shop)",
+      "employment (remote)",
+      "self-employment",
+      "gig",
+      "training pathway"
+    ]
+  },
+  "Nigeria": {
+    "language": "English + local languages",
+    "currency_symbol": "NGN",
+    "role_alias_map": {},
+    "econometric_priority_signals": [
+      "youth_neet_rate_pct",
+      "internet_penetration_pct",
+      "youth_literacy_rate_pct",
+      "wage_floor_proxy_usd_month"
+    ],
+    "opportunity_types_enabled": [
+      "employment (small shop)",
+      "employment (remote)",
+      "self-employment",
+      "gig",
+      "training pathway"
+    ]
+  },
+  "Philippines": {
+    "language": "English + Filipino",
+    "currency_symbol": "PHP",
+    "role_alias_map": {},
+    "econometric_priority_signals": [
+      "youth_neet_rate_pct",
+      "internet_penetration_pct",
+      "youth_literacy_rate_pct",
+      "wage_floor_proxy_usd_month"
+    ],
+    "opportunity_types_enabled": [
+      "employment (small shop)",
+      "employment (remote)",
+      "self-employment",
+      "gig",
+      "training pathway"
+    ]
+  },
+  "Colombia": {
+    "language": "Spanish + local usage",
+    "currency_symbol": "COP",
+    "role_alias_map": {},
+    "econometric_priority_signals": [
+      "youth_neet_rate_pct",
+      "internet_penetration_pct",
+      "youth_literacy_rate_pct",
+      "wage_floor_proxy_usd_month"
+    ],
+    "opportunity_types_enabled": [
+      "employment (small shop)",
+      "employment (remote)",
+      "self-employment",
+      "gig",
+      "training pathway"
+    ]
+  },
+  "Peru": {
+    "language": "Spanish + local usage",
+    "currency_symbol": "PEN",
+    "role_alias_map": {},
+    "econometric_priority_signals": [
+      "youth_neet_rate_pct",
+      "internet_penetration_pct",
+      "youth_literacy_rate_pct",
+      "wage_floor_proxy_usd_month"
+    ],
+    "opportunity_types_enabled": [
+      "employment (small shop)",
+      "employment (remote)",
+      "self-employment",
+      "gig",
+      "training pathway"
+    ]
+  },
+  "Guatemala": {
+    "language": "Spanish + local usage",
+    "currency_symbol": "GTQ",
+    "role_alias_map": {},
+    "econometric_priority_signals": [
+      "youth_neet_rate_pct",
+      "internet_penetration_pct",
+      "youth_literacy_rate_pct",
+      "wage_floor_proxy_usd_month"
+    ],
+    "opportunity_types_enabled": [
+      "employment (small shop)",
+      "employment (remote)",
+      "self-employment",
+      "gig",
+      "training pathway"
+    ]
+  }
+}

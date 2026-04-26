@@ -1,0 +1,31 @@
+region,raw_role_title,raw_skills_text,local_education_level,industry_sector,employment_type
+US,Junior Data Analyst,"Excel (vlookups, pivots), basic SQL, Tableau dashboards, some python pandas. Stakeholder reporting.",Bachelor's Degree,Information & Analytics,Formal Employment
+US,Numbers Guy / Reporting,"Pulls revenue reports outta Salesforce, builds slides for the VPs. Knows excel like the back of his hand. Light SQL.",Associate's Degree,Sales Operations,Formal Employment
+US,BI Analyst I,"SQL (intermediate), Power BI, ETL basics, A/B test reads, dashboard ownership. Some dbt exposure.",Bachelor's Degree,Financial Services,Formal Employment
+US,Financial Analyst - Entry,"FP&A modeling in excel, variance analysis, monthly close support, NetSuite reporting, ad hoc analysis for CFO",Bachelor's Degree (Finance),Financial Services,Formal Employment
+US,Operations Data Coordinator,"Spreadsheets all day, KPI tracking, googlesheets formulas, light python scripts for data clean up, Asana",GED + some college,Operations,Formal Employment
+US,Marketing Insights Associate,"GA4, looker, segment, sql queries on bigquery, attribution analysis, CAC/LTV reporting",Bachelor's Degree,Information & Analytics,Formal Employment
+US,Sales Ops Analyst,"Salesforce reports, SQL on snowflake, excel modeling for territory planning, hubspot data hygiene",Bachelor's Degree,Information & Analytics,Formal Employment
+US,Quant Research Intern,"Python (numpy/pandas), some R, statistical modeling, backtesting frameworks, jupyter notebooks",MS in progress,Research & Quantitative,Internship / National Service
+US,Bookkeeper / Office Admin,"QuickBooks, excel, AR/AP entries, monthly reconciliations, payroll support, vendor mgmt",High School Diploma,Financial Services,Formal Employment
+US,Data Engineer Jr,"Python, SQL, airflow basics, dbt, snowflake, git, some terraform exposure, CI/CD intro",Bachelor's Degree (CS),Financial Services,Formal Employment
+Nigeria,MIS Executive,"MS Excel advanced, vlookup, pivot, basic SQL queries on company DB, daily reporting to mgr, Tally ERP for accounts side, some power BI dashboards",B.Sc / HND,Financial Services,Formal Employment
+Nigeria,Data Analyst (Junior),"Excel, SQL postgres, light python jupyter, reporting in power bi, sometimes Yoruba/Pidgin documentation, internal NIBSS data pulls for fintech",B.Sc Statistics,Financial Services,Internship / National Service
+Nigeria,Computer Operator,"Typing, MS Office (word,excel,powerpoint), data entry, internet research, basic excel formulas, no SQL",OND / Polytechnic,Research & Quantitative,Internship / National Service
+Nigeria,Account Officer / Reporting,"Tally, Sage, Excel reconciliations, NGN cashbook mgmt, FIRS tax filings support, vendor invoicing",HND Accounting,Financial Services,Formal Employment
+Nigeria,Banking Operations Analyst,"Flexcube, Finacle, excel reporting, CBN regulatory returns, SQL light queries, AML transaction monitoring",B.Sc + ICAN partial,Financial Services,Formal Employment
+Nigeria,Dey Run Reports for Boss,"oga wants daily numbers, excel formulas, copy paste from system to excel, sometimes whatsapp screenshots of sales for the manager. fast on keyboard sha.",WAEC / SSCE,Operations,Formal Employment
+Nigeria,Insights Analyst Fintech,"Python pandas, SQL on redshift, mixpanel, amplitude, looker dashboards, USSD funnel analysis, Naira FX reporting",B.Sc + bootcamp cert,Information & Analytics,Formal Employment
+Nigeria,NYSC Data Intern,"Excel, basic SQL, pulled reports for NGO M&E officer, kobotoolbox surveys, light power BI, learning python",B.Sc (corper),NGO / Public Sector,Internship / National Service
+Nigeria,POS Reconciliation Officer,"interswitch settlements, excel pivot, paystack/flutterwave dashboards, daily merchant reports, dispute mgmt",HND,Financial Services,Formal Employment
+Nigeria,Junior Research Analyst,"excel modeling, bloomberg terminal basics, NGX data, naira-denominated DCFs, SQL training in progress",B.Sc Economics,Research & Quantitative,Formal Employment
+Philippines,BPO Data Agent,"data entry on client CRM, excel reporting, voice account previously, kasalukuyang nag-aaral ng SQL, basic dashboard sa power bi",College Graduate (any course),Financial Services,Informal / Agent Network
+Philippines,MIS Specialist,"Advanced excel, SQL server, SSRS reports, power bi, VBA macros, sometimes Tagalog client comms, ISO 9001 docs",B.S. Information Technology,Information & Analytics,Formal Employment
+Philippines,Data Analyst - Shared Services,"SQL, excel, alteryx, power bi, finance shared services support for US client, GL reconciliation reporting, night shift",B.S. Accountancy,Financial Services,Formal Employment
+Philippines,Workforce Mgmt Analyst,"WFM tools (Aspect, Verint), excel forecasting, shrinkage analysis, BPO industry, scheduling for 500+ agents",College Graduate,Business Process Outsourcing,Informal / Agent Network
+Philippines,Junior Accountant Analyst,"QuickBooks online, xero, excel recon, SAP business one light, BIR filings, multi-entity bookkeeping for SG/AU clients",B.S. Accountancy + CPA review,Financial Services,Formal Employment
+Philippines,Reports Analyst (Outsourced FP&A),"excel modeling, anaplan exposure, power query, monthly variance for AU client, light SQL on snowflake",B.S. Accountancy,Financial Services,Formal Employment
+Philippines,Encoder / Junior Analyst,"data encoding sa company system, excel basics, vlookup natutunan ko sa youtube, mabilis mag-type, learning sql online",Senior High Graduate (STEM),Operations,Informal / Agent Network
+Philippines,Healthcare Data Coordinator,"HIPAA awareness, excel reporting for US healthcare BPO client, SQL queries on claims data, ICD-10 lookups",B.S. Nursing (non-practicing),Business Process Outsourcing,Formal Employment
+Philippines,IT Support cum Reports,"helpdesk lvl 1, excel reports for tickets resolved, SLA tracking, sometimes SQL for AD user pulls, taglish documentation",B.S. Computer Science,Operations,Formal Employment
+Philippines,E-commerce Operations Analyst,"shopee/lazada seller center, excel inventory reports, SQL on shopify, product data hygiene, ad spend tracking",B.S. Business Admin,E-commerce / Digital Trade,Formal Employment
