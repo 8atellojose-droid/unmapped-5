@@ -172,19 +172,6 @@ python src/normalize_pipeline.py
 # Streamlit demo (5 tabs)
 streamlit run app.py
 ```
-
----
-
-## Demo Flow (60 seconds)
-
-| Time | What's on screen | Voiceover |
-|------|------------------|-----------|
-| 0:00–0:10 | Tab 1, Amara's raw profile shown | "Meet Amara. She repairs phones, tracks customer payments, speaks three languages, and learned basic coding from YouTube. To the formal labor market, she is invisible." |
-| 0:10–0:20 | Run Skills Signal Engine | "UNMAPPED turns informal experience into a portable skills profile. It extracts skill signals, maps them to standardized taxonomies, and explains every recommendation." |
-| 0:20–0:35 | Show normalized output, ISCO-like classification, normalized skills, and the Wittgenstein 2035 projection | "Amara's phone repair, customer management, and basic coding become a structured profile mapped to a portable role taxonomy — and we show where Ghana's education profile is heading by 2035 using Wittgenstein Centre projections." |
-| 0:35–0:50 | Switch to Tab 2, show real-source metric cards (NEET 23.91%, Internet 72.18%, Youth literacy 91.51%) and the AI Readiness expander | "Each match is grounded in real published indicators from the World Bank API, plus an explicit automation benchmark. The AI Readiness lens shows which tasks are at risk, which skills are durable, and which bridge skills add resilience." |
-| 0:50–1:00 | Switch to Tab 3, demo country switching + local terminology toggle | "UNMAPPED is country-agnostic infrastructure. Switch context, and education taxonomies, opportunity pathways, and even UI terminology re-localize automatically — all from data files, no code changes." |
-
 ---
 
 ## Why This Is Infrastructure, Not Just an App
@@ -226,10 +213,11 @@ streamlit run app.py
 
 ---
 
-## Project Summary (for submission form)
+## Project Summary
 
 UNMAPPED is a portable skills infrastructure layer for young people whose real capabilities are invisible to formal labor systems. Many youth in low- and middle-income countries have meaningful skills from informal work, self-teaching, family businesses, repair work, digital platforms, or community labor, but those skills rarely translate into recognized labor market signals.
 
 Our prototype implements two core modules: a **Skills Signal Engine** and an **Opportunity Matching Dashboard**. The Skills Signal Engine converts informal experience, education level, demonstrated competencies, languages, and constraints into a portable, human-readable skills profile mapped to standardized role and skill taxonomies. The Opportunity Matching layer connects that profile to realistic employment, self-employment, gig, and training pathways while surfacing visible economic signals such as wage proxies, automation exposure, digital readiness, and informality.
 
 UNMAPPED is designed as infrastructure rather than a standalone app. Country-specific labor market data, education mappings, automation calibration, language and local terms, and opportunity types are configurable inputs rather than hardcoded assumptions. The result is an explainable, auditable, and localizable system that helps governments, NGOs, training providers, and employers turn invisible skills into actionable opportunity signals.
+
